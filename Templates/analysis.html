@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scan Result</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 17px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 13px;
+            width: 13px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            transform: translateX(13px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 17px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form method="post" action="/reupload" enctype="multipart/form-data">
+        {{ if eq .ToolsUsed.Mobsf false }}
+            <label>MobSF</label>
+            <label class="switch">
+                <input type="checkbox" name="Mobsf" id="Mobsf" value=true>
+                <span class="slider round"></span>
+            </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Vt false }}
+        <label>VirusTotal</label>
+        <label class="switch">
+            <input type="checkbox" name="Vt" id="Vt" value=true>
+            <span class="slider round"></span>
+        </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Apkid false }}
+        <label>ApkID</label>
+        <label class="switch">
+            <input type="checkbox" name="Apkid" id="Apkid" value=true>
+            <span class="slider round"></span>
+        </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Exodus false }}
+        <label>EXODUS</label>
+        <label class="switch">
+            <input type="checkbox" name="Exodus" id="Exodus" value=true>
+            <span class="slider round"></span>
+        </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Ssdeep false }}
+        <label>SSDEEP</label>
+        <label class="switch">
+            <input type="checkbox" name="Ssdeep" id="Ssdeep" value=true>
+            <span class="slider round"></span>
+        </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Quark false }}
+        <label>Quark</label>
+        <label class="switch">
+            <input type="checkbox" name="Quark" id="Quark" value=true>
+            <span class="slider round"></span>
+        </label>
+        {{ end }}
+
+        {{ if eq .ToolsUsed.Androguard false }}
+        <label>Androguard</label>
+        <label class="switch">
+            <input type="checkbox" name="Androguard" id="Androguard" value=true>
+            <span class="slider round"></span>
+        </label><br>
+        {{ end }}
+
+        <input type="hidden" name="Hash" value="{{ .Hash }}">
+        <input type="submit" value="Scan">
+    </form>
+
+    <h1>Scan Result</h1>
+    <h2>Fingerprints</h2>
+    <p><b>File:</b> {{ .Data.quark.apk_filename }}.apk</p>
+    <p><b>Hash:</b> {{ .Hash }}</p>
+
+    {{ if .Data.apkid.files }}
+    <p><b>APKID:</b></p>
+    <ul>
+        {{ range .Data.apkid.files }}
+        <h4>Filename: {{ .filename }}</h4>
+        <ul>
+            {{ range $key, $value := .matches }}
+            <li>{{ $key }}:</li>
+            <ul>
+                {{ range $element := $value }}
+                <li>{{ $element }}</li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if .Data.ssdeep }}
+    <p><b>SSDeep:</b></p>
+    <ul>
+        <p><b>Apk File:</b> {{ .Data.ssdeep }}</p>
+    </ul>
+    {{ end }}
+
+    <h2>APK Analysis</h2>
+    {{ if .Data.exodus.application }}
+    <h3>APK Details:</h3>
+    <ul>
+        <li>
+            <p><b>Package:</b> {{ .Data.exodus.application.handle }}</p>
+        </li>
+        <li>
+            <p><b>App name:</b> {{ .Data.exodus.application.name }}</p>
+        </li>
+        <li>
+            <p><b>Version Code:</b> {{ .Data.exodus.application.version_code }}</p>
+        </li>
+        <li>
+            <p><b>Version Name:</b> {{ .Data.exodus.application.version_name }}</p>
+        </li>
+        <li>
+            <p><b>SDK:</b> {{ .Data.androguard.min_sdk_version }} - {{ .Data.androguard.max_sdk_version }}</p>
+        </li>
+        <li>
+            <p><b>UAID:</b> {{ .Data.exodus.application.uaid }}</p>
+        </li>
+    </ul>
+    {{ end }}
+     {{ if .Data.vt }}
+    <h3>Certificate details</h3>
+    <ul>
+        <li>
+            <p><b>MD5:</b>{{ .Data.vt.data.attributes.md5 }}</p>
+        </li>
+        <li>
+            <p><b>SHA1:</b>{{ .Data.vt.data.attributes.sha1 }}</p>
+        </li>
+        <li>
+            <p><b>SHA256:</b>{{ .Data.vt.data.attributes.sha256 }}</p>
+        </li>
+    </ul>
+    {{ end }}
+
+
+    {{ if .data.mobsf }}
+    <h3>Manifest Analysis</h3>
+    <ul>
+        {{ range .Data.mobsf.manifest_analysis.manifest_findings }}
+        <hr>
+        <li>
+            <h4>{{ .name }}</h4>
+            <p><strong>Description:</strong> {{ .description }}</p>
+            <p><strong>Rule:</strong> {{ .rule }}</p>
+            <p><strong>Severity:</strong> {{ .severity }}</p>
+        </li>
+        {{ end }}
+    </ul>
+
+    <h3>Browsable Activities</h3>
+    <table>
+        <tr>
+            <th>Activity Name</th>
+        </tr>
+        {{ range $key, $value := .Data.mobsf.browsable_activities }}
+        <tr>
+            <td>{{ $key }}</td>
+            <td>hosts: {{ range $value.hosts }}{{ . }}{{ end }}</td>
+            <td>schemes: {{ range $value.schemes }}{{ . }}{{ end }}</td>
+        </tr>
+        {{ end }}
+    </table>
+    {{ end }}
+
+
+    {{ if .Data.androguard }}
+    <h3>Main Activity</h3>
+    <p>{{ .Data.androguard.main_activity }}</p>
+
+    <h3>Activities</h3>
+    <ul>
+        {{ range .Data.androguard.activities }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    <h3>Receivers</h3>
+    <ul>
+        {{ range .Data.androguard.receivers }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    <h3>Services</h3>
+    <ul>
+        {{ range .Data.androguard.services }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    <h2>Code Analysis</h2>
+    {{ if .Data.mobsf }}
+    <h3>NIAP Analysis</h3>
+    <ul>
+        {{ range $key, $value := .Data.mobsf.niap_analysis }}
+        <hr>
+        <li>
+            <h4>{{ $key }}</h4>
+            <p>{{ .choice }}</p>
+            <p>{{ .description }}</p>
+        </li>
+        {{ end }}
+    </ul>
+
+    <h3>Code Analysis</h3>
+    <ul>
+        {{ range $key, $value := .Data.mobsf.code_analysis.findings }}
+        <hr>
+        <li>
+            <h4>{{ $key }}</h4>
+            <p><strong>cvss:</strong> {{ .metadata.cvss }}</p>
+            <p><strong>Description:</strong> {{ .metadata.description }}</p>
+            <p><strong>masvs:</strong> {{ .metadata.masvs }}</p>
+            <p><strong>cwe:</strong> {{ .metadata.cwe }}</p>
+            <p><strong>Severity:</strong> {{ .metadata.severity }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    <h2>Behaviour analysis</h2>
+
+    {{ if .Data.quark }}
+    <h3>Threat Analysis</h3>
+    <ul>
+        {{ range $key, $value := .Data.quark.crimes }}
+        <hr>
+        <li>
+            <p><strong>{{ .crime }}</strong></p>
+            <p>Confidence: {{ .confidence }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if .Data.vt }}
+    <h3>Permission Analysis</h3>
+    <ul>
+        {{ range $key, $value := .Data.vt.data.attributes.androguard.permission_details }}
+        <hr>
+        <li>
+            <h4>{{ $key }}</h4>
+            <p>{{ .permission_type }}</p>
+            <p><strong>{{ .short_description }}</strong></p>
+            <p>{{ .full_description }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if .Data.exodus }}
+    <h3>Tracking analysis</h3>
+    <ul>
+        {{ range $key, $value := .Data.exodus.trackers }}
+        <hr>
+        <li>
+            <p><strong>{{ .name }}</strong></p>
+            <p>Id: {{ .id }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+</body>
+
+</html>

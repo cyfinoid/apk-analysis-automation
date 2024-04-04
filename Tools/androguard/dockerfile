@@ -1,0 +1,9 @@
+FROM python:3.9
+
+WORKDIR /app
+
+COPY ./Tools/androguard/andro.py /app/andro.py
+
+RUN pip install androguard
+
+CMD ["python3", "/app/andro.py"]

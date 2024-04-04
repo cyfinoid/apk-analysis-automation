@@ -1,0 +1,433 @@
+Unauthorized Data Manipulation:
+
+Filename: 00001.json
+Crime: Initialize bitmap object and compress data (e.g. JPEG) into bitmap object
+
+Camera Misuse:
+
+Filename: 00002.json
+Crime: Open the camera and take a picture
+
+Insecure Data Handling:
+
+Filename: 00003.json
+Crime: Put the compressed bitmap data into a JSON object
+Filename: 00004.json
+Crime: Get the filename and put it into a JSON object
+Filename: 00005.json
+Crime: Get the absolute path of the file and put it into a JSON object
+Filename: 00009.json
+Crime: Put data in a cursor into a JSON object
+Filename: 00013.json
+Crime: Read a file and put it into a stream
+Filename: 00014.json
+Crime: Read a file into a stream and put it into a JSON object
+Filename: 00015.json
+Crime: Put a buffer stream (data) into a JSON object
+Filename: 00057.json
+Crime: Return the DHCP-assigned addresses from the last successful DHCP request
+Filename: 00072.json
+Crime: Write the SIM card information into a file
+Filename: 00073.json
+Crime: Write the ICCID of the device into a file
+Filename: 00077.json
+Crime: Read sensitive data (SMS, CALLLOG, etc.)
+Data Privacy Violation:
+
+Filename: 00010.json
+Crime: Read sensitive data (SMS, CALLLOG) and put it into a JSON object
+Filename: 00011.json
+Crime: Query data from URI (SMS, CALLLOGS)
+Filename: 00045.json
+Crime: Query the name of the currently running application
+Filename: 00049.json
+Crime: Query the phone number from SMS sender
+Filename: 00050.json
+Crime: Query the SMS service center timestamp
+Filename: 00053.json
+Crime: Monitor data identified by a given content URI changes (SMS, MMS, etc.)
+Filename: 00055.json
+Crime: Query the SMS content and the source of the phone number
+Filename: 00058.json
+Crime: Connect to the specific WIFI network
+Filename: 00063.json
+Crime: Implicit intent (view a web page, make a phone call, etc.) via setData
+Filename: 00068.json
+Crime: Executes the specified string Linux command
+Filename: 00069.json
+Crime: Run a shell script programmably
+Filename: 00078.json
+Crime: Get the network operator name
+Filename: 00080.json
+Crime: Save recorded audio/video to a file
+Filename: 00081.json
+Crime: Get declared method from a given method name
+Filename: 00085.json
+Crime: Get the ISO country code and put it into JSON
+Filename: 00086.json
+Crime: Check if the device is in data roaming mode
+Filename: 00088.json
+Crime: Create a secure socket connection to the given host address
+Filename: 00089.json
+Crime: Connect to a URL and receive an input stream from the server
+Filename: 00090.json
+Crime: Set the recorded audio/video file format
+Filename: 00092.json
+Crime: Send broadcast
+Filename: 00093.json
+Crime: Get the content of SMS and forward it to others via SMS
+Filename: 00094.json
+Crime: Connect to a URL and read data from it
+Filename: 00095.json
+Crime: Write the ICCID of the device into a file
+Filename: 00096.json
+Crime: Connect to a URL and set the request method
+Filename: 00097.json
+Crime: Get the sender address of the SMS and put it into JSON
+Filename: 00099.json
+Crime: Get location of the current GSM and put it into JSON
+Filename: 00101.json
+Crime: Initialize recorder
+Filename: 00102.json
+Crime: Set the phone speaker on
+Filename: 00104.json
+Crime: Check if the given path is a directory
+Filename: 00105.json
+Crime: Append the sender's address to the string
+Filename: 00109.json
+Crime: Connect to a URL and get the response code
+Filename: 00110.json
+Crime: Query the ICCID number
+Filename: 00111.json
+Crime: Get the sender address of the SMS
+Filename: 00112.json
+Crime: Get the date of the calendar event
+Filename: 00113.json
+Crime: Get location and put it into JSON
+Filename: 00117.json
+Crime: Get location of the device and append this info to a string
+Filename: 00118.json
+Crime: Get JSON object prepared and fill in location info
+Filename: 00122.json
+Crime: Open a file from the given absolute path of the file
+Filename: 00124.json
+Crime: Check the current active network type
+Filename: 00129.json
+Crime: Initialize class object dynamically
+Filename: 00130.json
+Crime: Connect to the remote server through the given URL
+Filename: 00131.json
+Crime: Check the list of currently running applications
+Filename: 00133.json
+Crime: Query the IMEI number
+Filename: 00134.json
+Crime: Query the current data network type
+Filename: 00135.json
+Crime: Query the list of installed packages
+Filename: 00138.json
+Crime: Set the audio source (MIC)
+Filename: 00139.json
+Crime: Get the current WiFi id
+Filename: 00140.json
+Crime: Write the phone number into a file
+Filename: 00142.json
+Crime: Get calendar information
+Filename: 00143.json
+Crime: Get an external class from a given path or filename
+Filename: 00144.json
+Crime: Write the SIM card serial number into a file
+Filename: 00145.json
+Crime: Create a socket connection to the proxy address
+Filename: 00147.json
+Crime: Get the time of the current location
+Filename: 00150.json
+Crime: Send IMSI over the Internet
+Filename: 00151.json
+Crime: Send the phone number over the Internet
+Filename: 00152.json
+Crime: Get data from HTTP and send SMS
+Filename: 00153.json
+Crime: Send binary data over HTTP
+Filename: 00154.json
+Crime: Connect hostname to TCP or UDP socket using KryoNet
+Filename: 00155.json
+Crime: Execute commands on the shell using DataOutputStream object
+Filename: 00159.json
+Crime: Use accessibility service to perform action getting node info by text
+Filename: 00160.json
+Crime: Use accessibility service to perform action getting node info by View Id
+Filename: 00161.json
+Crime: Perform accessibility service action on accessibility node info
+Filename: 00162.json
+Crime: Create InetSocketAddress object and connecting to it
+Filename: 00163.json
+Crime: Create a new Socket and connecting to it
+Filename: 00164.json
+Crime: Get SMS address and send it through HTTP
+Filename: 00165.json
+Crime: Get SMS message body and send it through HTTP
+Filename: 00166.json
+Crime: Get SMS message body and retrieve a string from it (possibly PIN / mTAN)
+Filename: 00167.json
+Crime: Use accessibility service to perform action getting root in the active window
+Filename: 00168.json
+Crime: Use accessibility service to perform global action getting node info by text
+Filename: 00169.json
+Crime: Use accessibility service to perform global action getting node info by View Id
+Filename: 00176.json
+Crime: Send SMS to a contact of the contact list
+Filename: 00179.json
+Crime: Hide the current app's icon
+Filename: 00182.json
+Crime: Open camera.
+Filename: 00183.json
+Crime: Get current camera parameters and change the setting.
+Filename: 00184.json
+Crime: Set camera preview texture
+Filename: 00185.json
+Crime: Start capturing camera preview frames to the screen
+Filename: 00186.json
+Crime: Control camera to take a picture
+Filename: 00194.json
+Crime: Set the audio source (MIC) and recorded file format
+Filename: 00195.json
+Crime: Set the output path of the recorded file
+Filename: 00196.json
+Crime: Set the recorded file format and output path
+Filename: 00198.json
+Crime: Initialize the recorder and start recording
+Filename: 00199.json
+Crime: Stop recording and release recording resources
+
+Code Reflection and Dynamic Class Loading:
+
+Filename: 00019.json
+Crime: Find a method from the given class name, usually for reflection
+Filename: 00026.json
+Crime: Method reflection
+Filename: 00027.json
+Crime: Get a specific method from other Dex files
+Filename: 00029.json
+Crime: Initialize class object dynamically
+Filename: 00141.json
+Crime: Load class from the given class name
+Filename: 00157.json
+Crime: Instantiate a new object using reflection, possibly used for dexClassLoader
+File System Operations:
+
+Filename: 00007.json
+Crime: Use the absolute path of the directory for the output media file path
+Filename: 00020.json
+Crime: Get the absolute path of the file and store it in a string
+Filename: 00028.json
+Crime: Read a file from the assets directory
+Filename: 00121.json
+Crime: Create a directory
+Filename: 00125.json
+Crime: Check if the given file path exists
+Filename: 00130.json
+Crime: Connect to the remote server through the given URL
+Filename: 00145.json
+Crime: Create a socket connection to the proxy address
+Filename: 00148.json
+Crime: Create a socket connection to the given host address
+Filename: 00179.json
+Crime: Hide the current app's icon
+Filename: 00181.json
+Crime: Load native libraries (.so) via System.loadLibrary
+Filename: 00193.json
+Crime: Send a SMS message
+Filename: 00194.json
+Crime: Set the audio source (MIC) and recorded file format
+Filename: 00195.json
+Crime: Set the output path of the recorded file
+Filename: 00196.json
+Crime: Set the recorded file format and output path
+Filename: 00197.json
+Crime: Get the audio encoder and initialize the recorder
+Filename: 00198.json
+Crime: Initialize the recorder and start recording
+Filename: 00199.json
+Crime: Stop recording and release recording resources
+Network Communication:
+
+Filename: 00008.json
+Crime: Check if successfully sending out SMS
+Filename: 00030.json
+Crime: Connect to the remote server through the given URL
+Filename: 00037.json
+Crime: Send notification
+Filename: 00041.json
+Crime: Save recorded audio/video to a file
+Filename: 00044.json
+Crime: Query the last time this package's activity was used
+Filename: 00053.json
+Crime: Monitor data identified by a given content URI changes (SMS, MMS, etc.)
+Filename: 00054.json
+Crime: Install other APKs from a file
+Filename: 00062.json
+Crime: Query WiFi information and WiFi MAC Address
+Filename: 00088.json
+Crime: Create a secure socket connection to the given host address
+Filename: 00089.json
+Crime: Connect to a URL and receive an input stream from the server
+Filename: 00092.json
+Crime: Send broadcast
+Filename: 00094.json
+Crime: Connect to a URL and read data from it
+Filename: 00096.json
+Crime: Connect to a URL and set the request method
+Filename: 00129.json
+Crime: Initialize class object dynamically
+Filename: 00130.json
+Crime: Connect to the remote server through the given URL
+Filename: 00141.json
+Crime: Load class from the given class name
+Filename: 00143.json
+Crime: Get an external class from a given path or filename
+Filename: 00145.json
+Crime: Create a socket connection to the proxy address
+Filename: 00148.json
+Crime: Create a socket connection to the given host address
+Filename: 00149.json
+Crime: Unpack an asset, possibly decrypt it and load it as DEX
+Filename: 00152.json
+Crime: Get data from HTTP and send SMS
+Filename: 00153.json
+Crime: Send binary data over HTTP
+Filename: 00154.json
+Crime: Connect hostname to TCP or UDP socket using KryoNet
+Filename: 00158.json
+Crime: Connect to a URL and send sensitive data got from resolver
+Filename: 00163.json
+Crime: Create InetSocketAddress object and connecting to it
+Filename: 00164.json
+Crime: Create a new Socket and connecting to it
+Filename: 00171.json
+Crime: Compare network operator with a string
+Filename: 00193.json
+Crime: Send a SMS message
+Filename: 00194.json
+Crime: Set the audio source (MIC) and recorded file format
+Filename: 00195.json
+Crime: Set the output path of the recorded file
+Filename: 00196.json
+Crime: Set the recorded file format and output path
+Filename: 00198.json
+Crime: Initialize the recorder and start recording
+Filename: 00199.json
+Crime: Stop recording and release recording resources
+Device Information Access:
+
+Filename: 00016.json
+Crime: Get location info of the device and put it into JSON
+Filename: 00017.json
+Crime: Get location of the device and append this info to a string
+Filename: 00018.json
+Crime: Get JSON object prepared and fill in location info
+Filename: 00036.json
+Crime: Get resource file from res/raw directory
+Filename: 00046.json
+Crime: Method reflection
+Filename: 00047.json
+Crime: Query the local IP address
+Filename: 00048.json
+Crime: Query the SMS contents
+Filename: 00058.json
+Crime: Connect to the specific WIFI network
+Filename: 00059.json
+Crime: Query the SIM card status
+Filename: 00060.json
+Crime: Query the network operator name
+Filename: 00061.json
+Crime: Return dynamic information about the current Wi-Fi connection
+Filename: 00062.json
+Crime: Query WiFi information and WiFi Mac Address
+Filename: 00077.json
+Crime: Read sensitive data (SMS, CALLLOG, etc)
+Filename: 00078.json
+Crime: Get the network operator name
+Filename: 00083.json
+Crime: Query the IMEI number
+Filename: 00084.json
+Crime: Get the ISO country code and IMSI
+Filename: 00086.json
+Crime: Check if the device is in data roaming mode
+Filename: 00087.json
+Crime: Check the current network type
+Filename: 00091.json
+Crime: Retrieve data from broadcast
+Filename: 00097.json
+Crime: Get the sender address of the SMS and put it into JSON
+Filename: 00098.json
+Crime: Check if the network is connected
+Filename: 00100.json
+Crime: Check the network capabilities
+Filename: 00111.json
+Crime: Get the sender address of the SMS
+Filename: 00117.json
+Crime: Get the IMSI and network operator name
+Filename: 00122.json
+Crime: Open a file from the given absolute path of the file
+Filename: 00124.json
+Crime: Check the current active network type
+Filename: 00126.json
+Crime: Read sensitive data (SMS, CALLLOG, etc)
+Filename: 00127.json
+Crime: Monitor the broadcast action events (BOOT_COMPLETED, etc)
+Filename: 00128.json
+Crime: Query user account information
+Filename: 00133.json
+Crime: Query the IMEI number
+Filename: 00137.json
+Crime: Get last known location of the device
+Filename: 00138.json
+Crime: Set the audio source (MIC)
+Filename: 00145.json
+Crime: Create a socket connection to the proxy address
+Filename: 00146.json
+Crime: Get the network operator name and IMSI
+Filename: 00147.json
+Crime: Get the time of the current location
+Filename: 00149.json
+Crime: Unpack an asset, possibly decrypt it and load it as DEX
+Filename: 00151.json
+Crime: Send IMSI over the Internet
+Filename: 00152.json
+Crime: Send the phone number over the Internet
+Filename: 00153.json
+Crime: Get data from HTTP and send SMS
+Filename: 00154.json
+Crime: Send binary data over HTTP
+Filename: 00157.json
+Crime: Instantiate a new object using reflection, possibly used for dexClassLoader
+Filename: 00164.json
+Crime: Get the current WiFi MAC address and put it into JSON
+Filename: 00169.json
+Crime: Use accessibility service to perform global action getting node info by View Id
+Filename: 00172.json
+Crime: Initialize phone number and check its validity
+Filename: 00176.json
+Crime: Send SMS to a contact of the contact list
+Filename: 00180.json
+Crime: Initialize SharedPreferences object
+Filename: 00187.json
+Crime: Get the network operator name and query the IMEI number
+Filename: 00190.json
+Crime: Get the phone number
+Filename: 00191.json
+Crime: Get the current IP address
+Filename: 00192.json
+Crime: Get the network operator name and query the IMEI number
+Filename: 00193.json
+Crime: Send a SMS message
+Filename: 00194.json
+Crime: Set the audio source (MIC) and recorded file format
+Filename: 00195.json
+Crime: Set the output path of the recorded file
+Filename: 00196.json
+Crime: Set the recorded file format and output path
+Filename: 00198.json
+Crime: Initialize the recorder and start recording
+Filename: 00199.json
+Crime: Stop recording and release recording resources

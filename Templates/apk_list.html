@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All indices</title>
+    
+</head>
+
+<body>
+    <h2>All apk files scanned by Cyfinoid</h2>
+
+    <table>
+        <tr>
+            <th>Apk Hash</th>
+            <td width="20"></td>
+            <th>ES storage size</th>
+        </tr>
+        {{ range .indices }}
+        <tr>
+            <td><a href="/getReport?hash={{ .index }}">{{ .index }}</a></td>
+            <td width="20"></td>
+            <td>{{ index . "store.size" }}</td>
+        </tr>
+        {{ end }}
+
+    </table>
+
+
+
+</body>
+
+</html>

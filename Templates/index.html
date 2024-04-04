@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Android automation experiment</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<!-- <script>
+		function uploadFile() {
+			// Get the selected tool buttons
+			const toolButtons = document.querySelectorAll('input[type="checkbox"]:checked');
+
+			// Create an array to store the selected tool names
+			const selectedTools = [];
+
+			// Add selected tool names to the array
+			toolButtons.forEach(button => {
+				selectedTools.push(button.name);
+			});
+
+			// Serialize the array as a query parameter
+			const toolsQueryParam = selectedTools.map(tool => `${tool}=1`).join('&');
+
+			// Get the form element
+			const form = document.getElementById('uploadForm');
+
+			// Get the selected file
+			const fileInput = document.getElementById('file');
+			const file = fileInput.files[0];
+
+			// Create a FormData object to send both file and query parameters
+			const formData = new FormData(form);
+
+			// Append the tools query parameter to the FormData object
+			formData.append('tools', toolsQueryParam);
+
+			// Send a POST request with the file and query parameters to the server
+			fetch('/upload?'+toolsQueryParam, {
+				method: 'POST',
+				body: formData,
+			})
+				.then(response => {
+					if (response.ok) {
+						// Handle success response
+						console.log('File uploaded successfully');
+					} else {
+						// Handle error response
+						console.error('File upload failed');
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+		}
+	</script> -->
+
+</head>
+
+<body>
+	<div class="container" style="display: grid;">
+		<h1>Android analysis Automation</h1>
+		<div class="card">
+			<h3>Select Tools for analysis</h3>
+			<script>
+				// JavaScript to handle the toggle functionality
+				const toggleStates = new Map(); // Map to store toggle states
+
+				function updateToggle(index, state) {
+					toggleStates.set(index, state);
+					console.log('Toggle at index ' + index + ' changed to: ' + state);
+					console.log('Toggle states:', toggleStates);
+				}
+				const uploadForm = document.querySelector('#uploadForm');
+
+				function uploadFile() {
+					// Get the selected tool buttons
+					const toolButtons = document.querySelectorAll('input[type="checkbox"]:checked');
+
+					// Create an array to store the selected tool names
+					const selectedTools = [];
+
+					// Add selected tool names to the array
+					toolButtons.forEach(button => {
+						selectedTools.push(button.name);
+					});
+
+					// Serialize the array as a query parameter
+					const toolsQueryParam = selectedTools.map(tool => `tools=${tool}`).join('&');
+
+					// Get the form element
+					const form = document.getElementById('uploadForm');
+
+					// Get the selected file
+					const fileInput = document.getElementById('file');
+					const file = fileInput.files[0];
+
+					// Create a FormData object to send both file and query parameters
+					const formData = new FormData(form);
+
+					// Append the tools query parameter to the FormData object
+					formData.append('tools', toolsQueryParam);
+
+					// Send a POST request with the file and query parameters to the server
+					fetch('/upload', {
+						method: 'POST',
+						body: formData,
+					})
+						.then(response => {
+							if (response.ok) {
+								// Handle success response
+								console.log('File uploaded successfully');
+							} else {
+								// Handle error response
+								console.error('File upload failed');
+							}
+						})
+						.catch(error => {
+							console.error('Error:', error);
+						});
+				}
+				
+			</script>
+			<form method="post" action="/upload" enctype="multipart/form-data" id="uploadForm">
+				<label>MobSF</label>
+				<label class="switch">
+					<input type="checkbox" name="Mobsf" id="Mobsf" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>VirusTotal</label>
+				<label class="switch">
+					<input type="checkbox" name="Vt" id="Vt" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>ApkID</label>
+				<label class="switch">
+					<input type="checkbox" name="Apkid" id="Apkid" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>EXODUS</label>
+				<label class="switch">
+					<input type="checkbox" name="Exodus" id="Exodus" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>SSDEEP</label>
+				<label class="switch">
+					<input type="checkbox" name="Ssdeep" id="Ssdeep" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>Quark</label>
+				<label class="switch">
+					<input type="checkbox" name="Quark" id="Quark" value=true>
+					<span class="slider round"></span>
+				</label>
+
+				<label>Androguard</label>
+				<label class="switch">
+					<input type="checkbox" name="Androguard" id="Androguard" value=true>
+					<span class="slider round"></span>
+				</label><br>
+				<div class="drop_box">
+					<label for="file">Choose a file:</label>
+					<input type="file" name="file" id="file">
+					<button type="submit" class="btn" >Upload</button>
+				</div>
+
+			</form>
+
+			<form method="GET" action="/list">
+				<Button class="btn">List of all apks scanned</Button>
+			</form>
+
+		</div>
+	</div>
+</body>
+
+</html>
