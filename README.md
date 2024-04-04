@@ -1,5 +1,6 @@
-# android-automation-experiment
+# apk-analysis-automation
 
+A project to streamline and automate multiple apk analysis tooling and aggregate result.
 This tool unlocks faster identification of vulnerabilities, trackers, malware and threats this tool champions proactive threat mitigation and contributes to a more secure Android ecosystem.
 
 Open source tools used in this project (You can use specific tools by your choice through query parameters, by default server will run all the tools asynchronously): 
@@ -114,4 +115,6 @@ go run pipeline.go
   [Checkout my portfolio](https://www.vanshbulani.info)  
   [Checkout my blog about this project](https://www.vanshbulani.info/blogs)  
   [LinkedIn](https://www.linkedin.com/in/vanshbulani/)  
+
+
 
